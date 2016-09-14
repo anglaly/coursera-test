@@ -34,7 +34,7 @@ function CalculateNumberOfItems(string) {
     var res = string.split(",");
     var total = 0;
     for (var i = 0; i < res.length; i++) {
-      if (res[i]!="")
+      if (res[i].toString().trim() != "")
       {
         total = total + 1;
       }
