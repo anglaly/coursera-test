@@ -1,13 +1,13 @@
 (function () {
 'use strict';
 
-angular.module('FoodApp', [])
+angular.module('LunchCheck', [])
 
-.controller('LunchController', LunchController);
+.controller('LunchCheckController', LunchCheckController);
 
-LunchController.$inject = ['$scope'];
+LunchCheckController.$inject = ['$scope'];
 
-function LunchController($scope) {
+function LunchCheckController($scope) {
   $scope.list = "";
   $scope.message = "";
   $scope.CheckLunch = function () {
@@ -32,7 +32,14 @@ function CalculateNumberOfItems(string) {
   if (string)
   {
     var res = string.split(",");
-    return res.length;
+    var total = 0;
+    for (var i = 0; i < res.length; i++) {
+      if (res[i]!="")
+      {
+        total = total + 1;
+      }
+    }
+    return total;
   } else {
     return 0;
   }
